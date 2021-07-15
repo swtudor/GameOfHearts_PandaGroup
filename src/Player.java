@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Player {
+    // Take this main method out, make it a proper class
    public static void main(String[] args){
        Scanner py = new Scanner(System.in);
        System.out.println("Enter each player's name (click Enter after each name): ");
