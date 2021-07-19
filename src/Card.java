@@ -1,9 +1,13 @@
 public class Card {
-    String suit;
+    Suit suit;
     String value;
 
-    public Card(String cSuit, String cValue) {
-        this.suit = cSuit;
+    public static enum Suit {
+        HEARTS, ClUBS, DIAMONDS, SPADES;
+    }
+
+    public Card(Suit suit, String cValue) {
+        this.suit = suit;
         this.value = cValue;
     }
 

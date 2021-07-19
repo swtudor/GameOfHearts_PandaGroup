@@ -1,8 +1,10 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args){
-
+    public static void main(String[] args) {
+        Deck gameDeck = new Deck();
+        gameDeck.getDeck().forEach(x-> System.out.println(x.value + x.suit.toString()));
+        System.out.println(gameDeck.getDeck().size());
         Scanner py = new Scanner(System.in);
         System.out.println("Enter each player's name (click Enter after each name): ");
         String oneName = py.nextLine();
@@ -22,7 +24,8 @@ public class Main {
 
     }
 
-    public void greeting(){
+
+    public void greeting() {
         System.out.println("Welcome to Game of Hearts!\n This game will need 4 player to play.");
 
     }
