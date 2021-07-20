@@ -1,8 +1,13 @@
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Deck gameDeck = new Deck();
+        //Collections.shuffle(gameDeck.getDeck());
+      //  System.out.println(gameDeck.deck().getDeck);
         gameDeck.getDeck().forEach(x-> System.out.println(x.value + x.suit.toString()));
         System.out.println(gameDeck.getDeck().size());
         Scanner py = new Scanner(System.in);

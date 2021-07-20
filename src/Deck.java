@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 
 public class Deck {
@@ -71,20 +74,12 @@ public class Deck {
         }
         return faceValue;
     }
+    private void cardShuffle() {
+        Collections.shuffle(deck);
+    }
+    private void cardDealer() {
+        //13 cards per player
+        //Use the card shuffle
+
+    }
 }
-// public void CardShuffle() {
-//ShuffleCard shuffle = new ShuffleCard();
-//Random shuffle = new Random(52);
-    /*CollectionsShuffleExample1 {
-        public static void main(String[] args) {
-            List<String> list = Arrays.asList("A", "B", "C", "D");
-            System.out.println("List before Shuffle : "+list);
-            Collections.shuffle(list);
-            System.out.println("List after shuffle : "+list);
-        }*/
-
-
-
-
-
-
