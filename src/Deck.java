@@ -77,9 +77,12 @@ public class Deck {
     private void cardShuffle() {
         Collections.shuffle(deck);
     }
-    private void cardDealer() {
+    public ArrayList<Card> cardDealer() {
+        // how to make 4 unigue hands of 13 cards
+        // no static copy. taking unique cards out of the deck
         //13 cards per player
         //Use the card shuffle
-
+        // void method changing what is happening in the list everytime
+     return new ArrayList<>();
     }
 }
