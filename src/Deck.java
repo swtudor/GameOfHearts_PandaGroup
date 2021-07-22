@@ -1,12 +1,11 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 
 public class Deck {
 
     private static final ArrayList<Card> deck = deckBuilder();
+
+    private ArrayList<Card> copyDeck = (ArrayList<Card>) deck.clone();
 
     public ArrayList<Card> getDeck() {
         return deck;
@@ -78,11 +77,23 @@ public class Deck {
         Collections.shuffle(deck);
     }
     public ArrayList<Card> cardDealer() {
-        // how to make 4 unigue hands of 13 cards
-        // no static copy. taking unique cards out of the deck
-        //13 cards per player
-        //Use the card shuffle
-        // void method changing what is happening in the list everytime
-     return new ArrayList<>();
+        if (copyDeck.size() == 0){
+            copyDeck = (ArrayList<Card>) deck.clone();
+        }
+        ArrayList<Card> tempHand = new ArrayList<>();
+        Collections.shuffle(copyDeck);
+        for (int i = 0; i <= 12; i++){
+            tempHand.add(copyDeck.remove(i));
+        }
+        return tempHand;
+        //How long is the copy list
+        //If size = 0, refill with fresh copy
+        //create a temp list for current hand
+        //shuffle copy list
+        //loop 13 times
+        //add values to temp list
+        //remove value from copy list
+        //return temp list of 13
+
     }
 }

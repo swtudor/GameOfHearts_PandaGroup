@@ -38,6 +38,8 @@ public class Player {
 
 
 //string array list for player hand
+//ArrayList values = ... // your values
+// Set uniqueValues = new HashSet(values); //now unique
 
 //writing a loop to alternate between four players.
 //The loop breaks when there is a winner

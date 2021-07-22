@@ -27,7 +27,10 @@ public class Main {
         playerThree.setHand(gameDeck.cardDealer());
         playerFour.setHand(gameDeck.cardDealer());
 
-
+        playerOne.getHand().forEach(x -> System.out.println(x.value + x.suit.toString()));
+        playerTwo.getHand().forEach(x -> System.out.println(x.value + x.suit.toString()));
+        playerThree.getHand().forEach(x -> System.out.println(x.value + x.suit.toString()));
+        playerFour.getHand().forEach(x -> System.out.println(x.value + x.suit.toString()));
 
 
         System.out.println("Player 1: " + playerOne.getName());

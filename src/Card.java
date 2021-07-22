@@ -13,7 +13,7 @@ public class Card {
         this.value = cValue;
     }
 
-    public String cardValue(int value) {
+   /* public String cardValue(int value) {
         ArrayList<> cardValue;
         switch (value){
             case 1:
@@ -57,6 +57,6 @@ public class Card {
                 break;
         }
 
-    }
+    }*/
 }
 
