@@ -17,7 +17,6 @@ public class Main {
         String twoName = py.nextLine();
         String threeName = py.nextLine();
         String fourName = py.nextLine();
-
         Player playerOne = new Player(oneName);
         Player playerTwo = new Player(twoName);
         Player playerThree = new Player(threeName);
