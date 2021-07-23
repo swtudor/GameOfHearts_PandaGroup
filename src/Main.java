@@ -9,7 +9,7 @@ public class Main {
         Collections.shuffle(gameDeck.getDeck());
         //System.out.println(gameDeck.deck().getDeck);
         //gameDeck.getDeck().forEach(x-> System.out.println(x.value + x.suit.toString()));
-        //System.out.println(gameDeck.getDeck().size());
+
 
         Scanner py = new Scanner(System.in);
         System.out.println("Enter each player's name (click Enter after each name): ");
@@ -23,14 +23,21 @@ public class Main {
         Player playerFour = new Player(fourName);
 
         playerOne.setHand(gameDeck.cardDealer());
+        System.out.println("P1 hand has" + playerOne.getHand().size());
+
         playerTwo.setHand(gameDeck.cardDealer());
+        System.out.println("P2 hand has" + playerTwo.getHand().size());
+
         playerThree.setHand(gameDeck.cardDealer());
+        System.out.println("P3 hand has" + playerThree.getHand().size());
+
         playerFour.setHand(gameDeck.cardDealer());
+        System.out.println("P4 hand has" + playerFour.getHand().size());
 
         playerOne.getHand().forEach(x -> System.out.println(x.value + x.suit.toString()));
-        playerTwo.getHand().forEach(x -> System.out.println(x.value + x.suit.toString()));
-        playerThree.getHand().forEach(x -> System.out.println(x.value + x.suit.toString()));
-        playerFour.getHand().forEach(x -> System.out.println(x.value + x.suit.toString()));
+        //playerTwo.getHand().forEach(x -> System.out.println(x.value + x.suit.toString()));
+        //playerThree.getHand().forEach(x -> System.out.println(x.value + x.suit.toString()));
+        //playerFour.getHand().forEach(x -> System.out.println(x.value + x.suit.toString()));
 
 
         System.out.println("Player 1: " + playerOne.getName());
@@ -38,7 +45,12 @@ public class Main {
         System.out.println("Player 3: " + playerThree.getName());
         System.out.println("Player 4: " + playerFour.getName());
 
-        Board.printboardGame();
+        System.out.println(gameDeck.getDeck().size());
+        Board.printBoardGame();
+
+
+
+
     }
 
 

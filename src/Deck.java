@@ -15,7 +15,7 @@ public class Deck {
         ArrayList<Card> fullDeck = new ArrayList<>();
         //for every suit in the list of suits
         for (Card.Suit newSuit : Card.Suit.values()) {
-            for (int value = 1; value <= 13; value++) {
+            for (int value = 0; value < 13; value++) {
                 //building the suit and assigning a value for each card
                 Card newCard = new Card(newSuit, faceValue(value));
                 //full deck added cards to it
@@ -82,8 +82,8 @@ public class Deck {
         }
         ArrayList<Card> tempHand = new ArrayList<>();
         Collections.shuffle(copyDeck);
-        for (int i = 0; i <= 12; i++){
-            tempHand.add(copyDeck.remove(i));
+        for (int i = 0; i < 13; i++){
+            tempHand.add(copyDeck.remove(0));
         }
         return tempHand;
         //How long is the copy list

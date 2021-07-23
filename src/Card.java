@@ -13,47 +13,47 @@ public class Card {
         this.value = cValue;
     }
 
-   /* public String cardValue(int value) {
-        ArrayList<> cardValue;
-        switch (value){
+    /*private static String cardNumber(int number) {
+        ArrayList<Card>  cardNumber;
+        switch (number) {
             case 1:
-                cardValue;
+                cardNumber = 0;
                 break;
             case 2:
-                cardValue;
+                cardNumber = 1;
                 break;
             case 3:
-                cardValue;
+                cardNumber = 2;
                 break;
             case 4:
-                cardValue;
+                cardNumber = 3;
                 break;
             case 5:
-                cardValue;
+                cardNumber = 4;
                 break;
             case 6:
-                cardValue;
+                cardNumber = 5;
                 break;
             case 7:
-                cardValue;
+                cardNumber = 6;
                 break;
             case 8:
-                cardValue;
+                cardNumber = 7;
                 break;
             case 9:
-                cardValue;
+                cardNumber = 8;
                 break;
             case 10:
-                cardValue;
+                cardNumber = 9;
                 break;
             case 11:
-                cardValue;
+                cardNumber = 10;
                 break;
             case 12:
-                cardValue;
+                cardNumber = 11;
                 break;
             case 13:
-                cardValue;
+                cardNumber = 12;
                 break;
         }
 
