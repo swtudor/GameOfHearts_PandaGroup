@@ -1,10 +1,21 @@
 import java.util.ArrayList;
 
 public class Player {
-    String name;
+    private String name;
+    private int score;
+    private ArrayList<Card> hand = new ArrayList<> ();
+    private ArrayList<ArrayList<Card>> tricksTaken = new ArrayList<>();
 
     public Player(String name) {
         this.name = name;
+    }
+
+    public ArrayList<ArrayList<Card>> getTricksTaken() {
+        return tricksTaken;
+    }
+
+    public void takeTrick(ArrayList<Card> trick){
+        tricksTaken.add(trick);
     }
 
     public String getName() {
@@ -15,7 +26,7 @@ public class Player {
         this.name = name;
     }
 
-    int score;
+
 
     public int getScore() {
         return score;
@@ -25,7 +36,7 @@ public class Player {
         this.score = score;
     }
 
-    private ArrayList<Card> hand = new ArrayList<> ();
+
 
     public ArrayList<Card> getHand() {
         return hand;
@@ -33,6 +44,24 @@ public class Player {
     }
     public void setHand(ArrayList<Card> pHand) {
         this.hand = pHand;
+    }
+
+
+
+    public void displayHand() {
+        //loop through players hand for each card display index number and card value
+        for (Card card: hand){
+            int i = hand.indexOf(card);
+            System.out.print(" | " + i + ": " + card.value + card.suit.toString());
+        }
+        System.out.println();
+    }
+
+    public Card playCard(int num){
+        //recieves index number of card to play removes card from players hand displays card and returns card
+        Card playedCard = hand.remove(num);
+        System.out.println("Card played: " + playedCard.value + playedCard.suit.toString());
+        return playedCard;
     }
 }//end of Player class
 

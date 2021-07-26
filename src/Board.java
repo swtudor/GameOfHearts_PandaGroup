@@ -1,4 +1,41 @@
+import java.util.ArrayList;
+
 public class Board {
+    //understanding Board logic
+    //The board should handle card tricks and assign them to the correct player
+    //Act as the controller for game logic
+    //Make 4 player objects?
+    //keep track of rounds played
+    //keep track of the winner
+    //track what the leading suit is
+
+    private ArrayList<Card> activeTrick = new ArrayList<>();
+
+    private int roundsPlayed = 0;
+
+    private Card.Suit leadSuit;
+
+    //player method to add card to trick
+    public void addToTrick(Card card) {
+        if (activeTrick.isEmpty()){
+            //set lead suit
+            leadSuit= card.suit;
+        }
+        activeTrick.add(card);
+    }
+
+    public ArrayList<Card> returnTrick(){
+        //if the round is completed the trick will have 4 cards
+        //empty the list and return the list of tricks
+        ArrayList<Card> trick = activeTrick;
+        activeTrick.clear();
+        roundsPlayed++;
+        return trick;
+    }
+
+
+
+
 
     ///public void printBoard() {
     public static char[][] gameBoard = {
