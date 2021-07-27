@@ -3,7 +3,9 @@ import java.util.*;
 
 public class Deck {
 
-    private static final ArrayList<Card> deck = deckBuilder();
+
+
+    private final ArrayList<Card> deck = deckBuilder();
 
     private ArrayList<Card> copyDeck = (ArrayList<Card>) deck.clone();
 
@@ -11,13 +13,13 @@ public class Deck {
         return deck;
     }
 
-    private static ArrayList<Card> deckBuilder() {
+    private ArrayList<Card> deckBuilder() {
         ArrayList<Card> fullDeck = new ArrayList<>();
         //for every suit in the list of suits
         for (Card.Suit newSuit : Card.Suit.values()) {
-            for (int value = 0; value < 13; value++) {
+            for (int value = 1; value <= 13; value++) {
                 //building the suit and assigning a value for each card
-                Card newCard = new Card(newSuit, faceValue(value));
+                Card newCard = new Card(newSuit, faceValue(value), value);
                 //full deck added cards to it
                 fullDeck.add(newCard);
             }
@@ -28,7 +30,7 @@ public class Deck {
         return fullDeck;
     }
 
-    private static String faceValue(int value) {
+    public String faceValue(int value) {
         String faceValue = "";
         switch (value) {
             case 1:

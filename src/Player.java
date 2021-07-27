@@ -52,7 +52,7 @@ public class Player {
         //loop through players hand for each card display index number and card value
         for (Card card: hand){
             int i = hand.indexOf(card);
-            System.out.print(" | " + i + ": " + card.value + card.suit.toString());
+            System.out.print(" | card:" + i + " " + card.value + card.suit.toString() + " :numeric value = " + card.numericValue);
         }
         System.out.println();
     }

@@ -11,20 +11,28 @@ public class Board {
 
     private ArrayList<Card> activeTrick = new ArrayList<>();
 
-    private int roundsPlayed = 0;
+    public int getRoundsPlayed() {
+        return roundsPlayed;
+    }
+
+    public void setRoundsPlayed(int roundsPlayed) {
+        this.roundsPlayed = roundsPlayed;
+    }
+
+    private int roundsPlayed = 1;
 
     private Card.Suit leadSuit;
 
     //player method to add card to trick
     public void addToTrick(Card card) {
-        if (activeTrick.isEmpty()){
+        if (activeTrick.isEmpty()) {
             //set lead suit
-            leadSuit= card.suit;
+            leadSuit = card.suit;
         }
         activeTrick.add(card);
     }
 
-    public ArrayList<Card> returnTrick(){
+    public ArrayList<Card> returnTrick() {
         //if the round is completed the trick will have 4 cards
         //empty the list and return the list of tricks
         ArrayList<Card> trick = activeTrick;
@@ -34,20 +42,17 @@ public class Board {
     }
 
 
-
-
-
     ///public void printBoard() {
     public static char[][] gameBoard = {
-                {' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' '},
-                {'|', ' ', ' ', '|','|', ' ', ' ', '|','|', ' ', ' ', '|','|', ' ', ' ', '|','|', ' ', ' ', '|','|', ' ', ' ', '|','|', ' ', ' ', '|','|', ' ', ' ', '|','|', ' ', ' ', '|','|', ' ', ' ', '|','|', ' ', ' ', '|','|', ' ', ' ', '|','|', ' ', ' ', '|'},
-                {' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' ',' ', '-', '-', ' '}
+            {' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' '},
+            {'|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|'},
+            {' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' '}
 
 
     };
 
 
-        // each player card corresponds to a specific number for each card. using a switch statement.
+    // each player card corresponds to a specific number for each card. using a switch statement.
     public static void printBoardGame() {
         for (char[] row : gameBoard) { // row
             for (char col : row) { //column
