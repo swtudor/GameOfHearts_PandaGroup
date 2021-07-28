@@ -28,8 +28,20 @@ public class Board {
         if (activeTrick.isEmpty()) {
             //set lead suit
             leadSuit = card.suit;
+            activeTrick.add(card);
         }
-        activeTrick.add(card);
+        else{
+            //Check that the card played is of the right suit
+            //if not, display a message that says play a card of the correct suit
+            if (card.suit == leadSuit){
+                activeTrick.add(card);
+            }
+            else{
+                System.out.println("The card must be " + leadSuit);
+            }
+        }
+
+
     }
 
     public ArrayList<Card> returnTrick() {

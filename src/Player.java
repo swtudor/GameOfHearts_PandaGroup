@@ -59,6 +59,8 @@ public class Player {
 
     public Card playCard(int num){
         //recieves index number of card to play removes card from players hand displays card and returns card
+        Card card;
+        Card leadSuit;
         Card playedCard = hand.remove(num);
         System.out.println("Card played: " + playedCard.value + playedCard.suit.toString());
         return playedCard;
