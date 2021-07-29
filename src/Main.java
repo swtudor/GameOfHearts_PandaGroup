@@ -7,10 +7,7 @@ public class Main {
         Deck gameDeck = new Deck();
         Board board = new Board();
         Collections.shuffle(gameDeck.getDeck());
-        //System.out.println(gameDeck.deck().getDeck);
-        //gameDeck.getDeck().forEach(x-> System.out.println(x.value + x.suit.toString()));
-
-
+        greeting();
         Scanner py = new Scanner(System.in);
         System.out.println("Enter each player's name (click Enter after each name): ");
         String oneName = py.nextLine();
@@ -32,58 +29,53 @@ public class Main {
         while (!playerFour.getHand().isEmpty()) {
             System.out.println("round " + board.getRoundsPlayed() + " begin");
 
-            System.out.println(playerOne.getName() + " pick a card");
             playerOne.displayHand();
-            num = py.nextInt();
-            board.addToTrick(playerOne.playCard(num));
+            do {
+                System.out.println(playerOne.getName() + " pick a card");
+                num = py.nextInt();
+            } while (!board.addToTrick(playerOne.getHand().get(num), playerOne.getHand()));
+            playerOne.playCard(num);
+            System.out.println("Current suit is " + board.getLeadSuit());
             System.out.println();
 
-            System.out.println(playerTwo.getName() + " pick a card");
+
             playerTwo.displayHand();
-            num = py.nextInt();
-            board.addToTrick(playerTwo.playCard(num));
+            do {
+                System.out.println(playerTwo.getName() + " pick a card");
+                num = py.nextInt();
+            } while (!board.addToTrick(playerTwo.getHand().get(num), playerTwo.getHand()));
+            playerTwo.playCard(num);
+            System.out.println("Current suit is " + board.getLeadSuit());
             System.out.println();
 
-            System.out.println(playerThree.getName() + " pick a card");
             playerThree.displayHand();
-            num = py.nextInt();
-            board.addToTrick(playerThree.playCard(num));
+            do {
+                System.out.println(playerThree.getName() + " pick a car");
+                num = py.nextInt();
+            } while (!board.addToTrick(playerThree.getHand().get(num), playerThree.getHand()));
+            playerThree.playCard(num);
+            System.out.println("Current suit is " + board.getLeadSuit());
             System.out.println();
 
-            System.out.println(playerFour.getName() + " pick a card");
+
             playerFour.displayHand();
-            num = py.nextInt();
-            board.addToTrick(playerFour.playCard(num));
+            do {
+                System.out.println(playerFour.getName() + " pick a card");
+                num = py.nextInt();
+            } while (!board.addToTrick(playerFour.getHand().get(num), playerFour.getHand()));
+            playerFour.playCard(num);
+            System.out.println("Current suit is " + board.getLeadSuit());
             System.out.println();
 
             board.returnTrick();
 
         }
 
-        /*playerOne.setHand(gameDeck.cardDealer());
-        System.out.println("P1 hand has" + playerOne.getHand().size());
-
-        playerTwo.setHand(gameDeck.cardDealer());
-        System.out.println("P2 hand has" + playerTwo.getHand().size());
-
-        playerThree.setHand(gameDeck.cardDealer());
-        System.out.println("P3 hand has" + playerThree.getHand().size());
-
-        playerFour.setHand(gameDeck.cardDealer());
-        System.out.println("P4 hand has" + playerFour.getHand().size());*/
-
-        //playerTwo.getHand().forEach(x -> System.out.println(x.value + x.suit.toString()));
-        //playerThree.getHand().forEach(x -> System.out.println(x.value + x.suit.toString()));
-        //playerFour.getHand().forEach(x -> System.out.println(x.value + x.suit.toString()));
-
-
         System.out.println("Player 1: " + playerOne.getName() + "'s tricks taken: " + playerOne.getTricksTaken());
         System.out.println("Player 2: " + playerTwo.getName() + "'s tricks taken: " + playerTwo.getTricksTaken());
         System.out.println("Player 3: " + playerThree.getName() + "'s tricks taken: " + playerThree.getTricksTaken());
         System.out.println("Player 4: " + playerFour.getName() + "'s tricks taken: " + playerFour.getTricksTaken());
 
-        //System.out.println(gameDeck.getDeck().size());
-        //Board.printBoardGame();
     }
 
 

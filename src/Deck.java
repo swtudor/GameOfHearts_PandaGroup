@@ -1,9 +1,5 @@
 import java.util.*;
-
-
 public class Deck {
-
-
 
     private final ArrayList<Card> deck = deckBuilder();
 
@@ -75,27 +71,20 @@ public class Deck {
         }
         return faceValue;
     }
+
     private void cardShuffle() {
         Collections.shuffle(deck);
     }
+
     public ArrayList<Card> cardDealer() {
-        if (copyDeck.size() == 0){
+        if (copyDeck.size() == 0) {
             copyDeck = (ArrayList<Card>) deck.clone();
         }
         ArrayList<Card> tempHand = new ArrayList<>();
         Collections.shuffle(copyDeck);
-        for (int i = 0; i < 13; i++){
+        for (int i = 0; i < 13; i++) {
             tempHand.add(copyDeck.remove(0));
         }
         return tempHand;
-        //How long is the copy list
-        //If size = 0, refill with fresh copy
-        //create a temp list for current hand
-        //shuffle copy list
-        //loop 13 times
-        //add values to temp list
-        //remove value from copy list
-        //return temp list of 13
-
     }
 }

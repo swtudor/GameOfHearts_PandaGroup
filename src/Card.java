@@ -1,12 +1,10 @@
-import java.util.ArrayList;
-
 public class Card {
     Suit suit;
     String value;
     int numericValue;
 
     public static enum Suit {
-        HEARTS, ClUBS, DIAMONDS, SPADES;
+        HEARTS, CLUBS, DIAMONDS, SPADES;
     }
 
     public Card(Suit suit, String cValue, int numericValue) {

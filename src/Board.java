@@ -1,13 +1,7 @@
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class Board {
-    //understanding Board logic
-    //The board should handle card tricks and assign them to the correct player
-    //Act as the controller for game logic
-    //Make 4 player objects?
-    //keep track of rounds played
-    //keep track of the winner
-    //track what the leading suit is
 
     private ArrayList<Card> activeTrick = new ArrayList<>();
 
@@ -21,27 +15,34 @@ public class Board {
 
     private int roundsPlayed = 1;
 
+    public Card.Suit getLeadSuit() {
+        return leadSuit;
+    }
+
     private Card.Suit leadSuit;
 
     //player method to add card to trick
-    public void addToTrick(Card card) {
+    public boolean addToTrick(Card card, ArrayList<Card> playerHand) {
         if (activeTrick.isEmpty()) {
             //set lead suit
             leadSuit = card.suit;
             activeTrick.add(card);
-        }
-        else{
+            return true;
+        } else {
             //Check that the card played is of the right suit
             //if not, display a message that says play a card of the correct suit
-            if (card.suit == leadSuit){
+            if (card.suit == leadSuit) {
                 activeTrick.add(card);
-            }
-            else{
+                return true;
+            } else {
+                if (playerHand.stream().filter(c -> c.suit == leadSuit).collect(Collectors.toList()).isEmpty()) {
+                    activeTrick.add(card);
+                    return true;
+                }
                 System.out.println("The card must be " + leadSuit);
+                return false;
             }
         }
-
-
     }
 
     public ArrayList<Card> returnTrick() {
@@ -51,27 +52,6 @@ public class Board {
         activeTrick.clear();
         roundsPlayed++;
         return trick;
-    }
-
-
-    ///public void printBoard() {
-    public static char[][] gameBoard = {
-            {' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' '},
-            {'|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|', '|', ' ', ' ', '|'},
-            {' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' ', ' ', '-', '-', ' '}
-
-
-    };
-
-
-    // each player card corresponds to a specific number for each card. using a switch statement.
-    public static void printBoardGame() {
-        for (char[] row : gameBoard) { // row
-            for (char col : row) { //column
-                System.out.print(col);
-            }
-            System.out.println();
-        }
     }
 }
 
